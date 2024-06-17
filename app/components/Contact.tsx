@@ -8,10 +8,9 @@ import Navbar from "./Navbar"
 
 export function Contact() {
   return (
-    <div>
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className="flex flex-col">
       <Navbar />
-      <main className="mt-16 px-4 md:px-6">
+      <main className=" px-4 md:px-6">
         <section className="w-full py-12 md:py-24 lg:py-32 flex items-center justify-center" id="contact">
           <div className="container">
             <div className="flex flex-col items-center justify-center gap-12 md:flex-row md:items-start">
@@ -35,71 +34,59 @@ export function Contact() {
                   </Button>
                 </form>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-24">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-24">
                 <Card>
-                  <CardContent className="flex flex-col items-center justify-center gap-4">
+                  <CardContent className="flex flex-col items-center justify-center">
                     <img
                       alt="QR Code 1"
-                      className="rounded-lg"
-                      height={150}
-                      src="/placeholder.svg"
-                      style={{
-                        aspectRatio: "150/150",
-                        objectFit: "cover",
-                      }}
-                      width={150}
+                      className="rounded-lg object-contain"
+                      height={500}
+                      src="/rickrollqr.webp"
+                      width={500}
                     />
                     <div className="text-center">
-                      <h3 className="text-lg font-bold">QR Code 1</h3>
-                      <p className="text-gray-500 ">Scan this code for more information.</p>
+                      <h3 className="text-lg font-bold">Facebook</h3>
+                      <p className="text-gray-500 ">Scan this QR code or click here</p>
                     </div>
                   </CardContent>
                 </Card>
                 <Card>
-                  <CardContent className="flex flex-col items-center justify-center gap-4">
+                  <CardContent className="flex flex-col items-center justify-center">
                     <img
-                      alt="QR Code 2"
-                      className="rounded-lg"
-                      height={150}
-                      src="/placeholder.svg"
-                      style={{
-                        aspectRatio: "150/150",
-                        objectFit: "cover",
-                      }}
-                      width={150}
+                      alt="QR Code 1"
+                      className="rounded-lg object-contain"
+                      height={500}
+                      src="/rickrollqr.webp"
+                      width={500}
                     />
                     <div className="text-center">
-                      <h3 className="text-lg font-bold">QR Code 2</h3>
-                      <p className="text-gray-500 ">Scan this code for more information.</p>
+                      <h3 className="text-lg font-bold">Instagram</h3>
+                      <p className="text-gray-500 ">Scan this QR code or click here</p>
                     </div>
                   </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="flex flex-col items-center justify-center gap-4">
-                    <img
-                      alt="QR Code 3"
-                      className="rounded-lg"
-                      height={150}
-                      src="/placeholder.svg"
-                      style={{
-                        aspectRatio: "150/150",
-                        objectFit: "cover",
-                      }}
-                      width={150}
-                    />
-                    <div className="text-center">
-                      <h3 className="text-lg font-bold">QR Code 3</h3>
-                      <p className="text-gray-500 ">Scan this code for more information.</p>
-                    </div>
-                  </CardContent>
-                </Card>
+                  </Card>
+                  <Card>
+                    <CardContent className="flex flex-col items-center justify-center">
+                      <img
+                        alt="QR Code 1"
+                        className="rounded-lg object-contain"
+                        height={500}
+                        src="/rickrollqr.webp"
+                        width={500}
+                      />
+                      <div className="text-center">
+                        <h3 className="text-lg font-bold">Maps</h3>
+                        <p className="text-gray-500 ">Scan this QR code or click here</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+
               </div>
             </div>
           </div>
         </section>
       </main>
       </div>
-    </div>
   )
 }
 

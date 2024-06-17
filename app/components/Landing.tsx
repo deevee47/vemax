@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { Button } from "@/app/components/ui/button"
 import Navbar from "./Navbar"
+import TeamMember from "./utils/teamMember"
 
 export function Landing() {
   return (
@@ -13,7 +14,7 @@ export function Landing() {
           className="absolute inset-0 w-full h-full object-cover"
           height={1080}
           src="/placeholder.svg"
-          style={{
+          style={{ 
             aspectRatio: "1920/1080",
             objectFit: "cover",
           }}
@@ -40,7 +41,7 @@ export function Landing() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             <div className="flex flex-col items-center justify-center">
               <h3 className="text-4xl font-bold text-blue-500">10K+</h3>
-              <p className="text-gray-500">Customers</p>
+              <p className="text-gray-500">Trusted Customers</p>
             </div>
             <div className="flex flex-col items-center justify-center">
               <h3 className="text-4xl font-bold text-red-500">50K+</h3>
@@ -106,7 +107,7 @@ export function Landing() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Our Journey</h2>
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-red-500">Our Journey</h2>
               <p className="mt-4 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Our electric manufacturing company has come a long way since its inception in 2010. From humble
                 beginnings to becoming a global leader in innovative electric solutions, our journey has been marked by
@@ -118,7 +119,7 @@ export function Landing() {
                 alt="Our Journey"
                 className="rounded-lg object-cover"
                 height="400"
-                src="/placeholder.svg"
+                src="/demo.jpg"
                 style={{
                   aspectRatio: "600/400",
                   objectFit: "cover",
@@ -133,7 +134,7 @@ export function Landing() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Electric Manufacturing Solutions</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-blue-500">Our Electric Manufacturing Solutions</h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Explore our cutting-edge electric manufacturing products that are transforming industries.
               </p>
@@ -144,49 +145,22 @@ export function Landing() {
               <img
                 alt="Product 1"
                 className="rounded-t-lg object-cover"
-                height="250"
-                src="/placeholder.svg"
+                height="400"
+                src="/galaxy-7w.jpg"
                 style={{
-                  aspectRatio: "400/250",
+                  aspectRatio: "500/400",
                   objectFit: "cover",
                 }}
-                width="400"
+                width="500"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold">Electric Motor</h3>
+                <h3 className="text-xl font-bold">Galaxy Bulb</h3>
                 <p className="mt-2 text-gray-500">
-                  Our high-efficiency electric motors are designed for industrial and commercial applications.
+                  Our high-efficiency bulbs are designed for residental applications.
                 </p>
                 <div className="mt-4">
                   <Link
-                    className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-900/90 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                    href="#"
-                  >
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="rounded-lg bg-white shadow-md">
-              <img
-                alt="Product 2"
-                className="rounded-t-lg object-cover"
-                height="250"
-                src="/placeholder.svg"
-                style={{
-                  aspectRatio: "400/250",
-                  objectFit: "cover",
-                }}
-                width="400"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold">Electric Charger</h3>
-                <p className="mt-2 text-gray-500">
-                  Our advanced electric chargers are designed for residential and commercial use.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-900/90 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                    className="inline-flex items-center justify-center rounded-md bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-900/90 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                     href="#"
                   >
                     Learn More
@@ -198,13 +172,41 @@ export function Landing() {
               <img
                 alt="Product 3"
                 className="rounded-t-lg object-cover"
-                height="250"
-                src="/placeholder.svg"
+                height="400"
+                src="/street-light-50w-100w.jpg"
                 style={{
-                  aspectRatio: "400/250",
+                  aspectRatio: "500/400",
+                  objectFit: "contain",
+                }}
+                width="500"
+                
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold">Street Lights</h3>
+                <p className="mt-2 text-gray-500">
+                  Our advanced electric flood ligts are designed for residental and commercial use.
+                </p>
+                <div className="mt-4">
+                  <Link
+                    className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-900/90 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                    href="#"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-lg shadow-md">
+              <img
+                alt="Product 2"
+                className="rounded-t-lg object-cover"
+                height="400"
+                src="/bulb.jpg"
+                style={{
+                  aspectRatio: "500/400",
                   objectFit: "cover",
                 }}
-                width="400"
+                width="500"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold">Electric Inverter</h3>
@@ -235,74 +237,10 @@ export function Landing() {
               </p>
             </div>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="rounded-lg bg-white shadow-md">
-                <img
-                  alt="Team Member 1"
-                  className="rounded-t-lg object-cover"
-                  height="400"
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "400/400",
-                    objectFit: "cover",
-                  }}
-                  width="400"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold">John Doe</h3>
-                  <p className="mt-2 text-gray-500">Lead Engineer</p>
-                  <div className="mt-4">
-                    <Link
-                      className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-900/90 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                      href="#"
-                    >
-                      Learn More
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="rounded-lg bg-white shadow-md">
-                <img
-                  alt="Team Member 2"
-                  className="rounded-t-lg object-cover"
-                  height="400"
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "400/400",
-                    objectFit: "cover",
-                  }}
-                  width="400"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold">Jane Smith</h3>
-                  <p className="mt-2 text-gray-500">Senior Engineer</p>
-                  <div className="mt-4">
-                    <Link
-                      className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-900/90 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                      href="#"
-                    >
-                      Learn More
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="rounded-lg bg-white shadow-md">
-                <img
-                  alt="Team Member 3"
-                  className="rounded-t-lg object-cover"
-                  height="400"
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "400/400",
-                    objectFit: "cover",
-                  }}
-                  width="400"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold">Michael Johnson</h3>
-                  <p className="mt-2 text-gray-500">Project Manager</p>
-                  <div className="mt-4" />
-                </div>
-              </div>
+              <TeamMember imgPath="./demo.jpg" name="John Doe" position="Co-founder"/>
+              <TeamMember imgPath="./demo2.jpg" name="John Doe" position="Co-founder"/>
+              <TeamMember imgPath="./demo3.jpg" name="John Doe" position="Co-founder"/>
+
             </div>
           </div>
         </div>
