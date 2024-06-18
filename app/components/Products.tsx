@@ -4,6 +4,7 @@ import { products } from './data';
 import Navbar from './Navbar';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, ChevronDown } from 'lucide-react';
+import Footer from './Footer';
 
 interface Product {
     name: string;
@@ -167,6 +168,7 @@ const Products: React.FC = () => {
                     )}
                 </AnimatePresence>
             </motion.div>
+            <Footer />
         </>
     );
 };

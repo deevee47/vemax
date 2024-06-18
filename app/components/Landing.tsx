@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "@/app/components/ui/button"
 import Navbar from "./Navbar"
 import TeamMember from "./utils/teamMember"
+import Footer from "./Footer"
 
 export function Landing() {
   return (
@@ -245,6 +246,7 @@ export function Landing() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   )
 }
