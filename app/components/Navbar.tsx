@@ -1,37 +1,81 @@
-import React from 'react'
-import { Button } from './ui/button'
-import {MenuIcon, MountainIcon } from 'lucide-react'
-import Link from 'next/link'
+"use client"
 
+import React, { useState } from 'react'
+import { Button } from './ui/button'
+import { MenuIcon, MountainIcon } from 'lucide-react'
+import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const Navbar = () => {
+  const [isHovered, setIsHovered] = useState(null)
+
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 backdrop-blur-md bg-white border-b border-gray-200 rounded-b-lg shadow-lg">
-      <div className="flex items-center justify-between px-4 md:px-6 h-16">
-        <Link className="flex items-center gap-2 font-semibold" href="/">
-          <MountainIcon className="h-6 w-6" />
-          <div>VeMax</div>
+    <motion.header
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="sticky top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 border-b border-gray-200 rounded-b-lg shadow-lg"
+    >
+      <div className="container mx-auto flex items-center justify-between px-4 md:px-6 h-16">
+        <Link href="/">
+          <motion.div
+            className="flex items-center gap-2 font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+              VeMax
+          </motion.div>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
-          <Link className="hover:underline" href="/">
-            Home
-          </Link>
-          <Link className="hover:underline" href="#">
-            About
-          </Link>
-          <Link className="hover:underline" href="#">
-            Products
-          </Link>
-          <Link className="hover:underline" href="/contact">
-            Contact
-          </Link>
+          {['Home', 'About', 'Products', 'Contact'].map((item, index) => (
+            <motion.div
+              key={item}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              //@ts-ignore
+              onHoverStart={() => setIsHovered(item)}
+              onHoverEnd={() => setIsHovered(null)}
+            >
+              <Link href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}>
+                <motion.div
+                  className="text-gray-600 hover:text-blue-600 transition-colors duration-300 relative"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {item}
+                  <AnimatePresence>
+                    {isHovered === item && (
+                      <motion.span
+                        className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        exit={{ scale: 0 }}
+                        transition={{ duration: 0.2 }}
+                      />
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              </Link>
+            </motion.div>
+          ))}
         </nav>
-        <Button className="md:hidden" size="icon" variant="outline">
-          <MenuIcon className="h-6 w-6" />
-          <span className="sr-only">Toggle navigation</span>
-        </Button>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Button className="md:hidden bg-blue-500 hover:bg-blue-600 text-white" size="icon" variant="outline">
+            <motion.div
+              animate={{ rotate: [0, 180, 360] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            >
+              <MenuIcon className="h-6 w-6" />
+            </motion.div>
+            <span className="sr-only">Toggle navigation</span>
+          </Button>
+        </motion.div>
       </div>
-    </header>
+    </motion.header>
   )
 }
 
