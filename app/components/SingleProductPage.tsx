@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { products } from './data';
+import Link from 'next/link';
 
 interface Product {
     id: string;
@@ -53,9 +54,16 @@ const SingleProductPage: React.FC<SingleProductPageProps> = ({ product }) => {
                                 {product.description}
                             </p>
                             <div className="mt-8">
+                                <Link href={"/products"}>
                                 <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out">
-                                    Add to Cart
+                                    View All Products
                                 </button>
+                                </Link>
+                                <Link href={"/contact"}>
+                                    <button className="border-blue-600 text-blue-600 px-6 py-3 rounded-md hover:bg-blue-700 hover:text-white transition duration-300 ease-in-out">
+                                        Want to Buy?
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -27,7 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, priority = false }) 
 
     return (
         <Link href={`/products/${product.id}`} passHref>
-            <motion.div 
+            <motion.div
                 className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -36,7 +36,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, priority = false }) 
                     <div className="w-full h-60 bg-gray-200 flex items-center justify-center">
                         {!imageLoaded && (
                             <motion.div
-                                className="spinner"
+                                className="absolute inset-0 flex items-center justify-center"
                                 animate={{ rotate: 360 }}
                                 transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                             >
@@ -240,8 +240,8 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ products = initialProducts 
                                     exit={{ opacity: 0, scale: 0.9 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <ProductCard 
-                                        product={product} 
+                                    <ProductCard
+                                        product={product}
                                         priority={index < 4}
                                     />
                                 </motion.div>
