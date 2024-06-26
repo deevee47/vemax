@@ -10,7 +10,7 @@ export function Contact() {
   return (
     <div className="flex flex-col">
       <Navbar />
-      <main className=" px-4 md:px-6">
+      <main className="px-8 md:px-6">
         <section className="w-full py-12 md:py-24 lg:py-32 flex items-center justify-center" id="contact">
           <div className="container">
             <div className="flex flex-col items-center justify-center gap-12 md:flex-row md:items-start">

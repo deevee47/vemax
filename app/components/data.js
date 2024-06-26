@@ -10,7 +10,7 @@ export const products = [
     "name": "Rainbow (10W)",
     "category": "Indoor",
     "description": "Add a touch of color to your home with our Rainbow 10W light.",
-    "imgUrl":"https://ik.imagekit.io/wlcaybfpqp/VMAX%20product/rainbow-10w.jpg?updatedAt=1718707907873"
+    "imgUrl":"https://ik.imagekit.io/wlcaybfpqp/VMAX%20product/rainbow-1w0w.jpg?updatedAt=1718707907873"
   },
   {
     "id": "006",

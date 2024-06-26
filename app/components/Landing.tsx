@@ -37,9 +37,9 @@ export function Landing() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 px-4">
         <div className="container w-full mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 p-3">
             <div className="flex flex-col items-center justify-center">
               <h3 className="text-4xl font-bold text-blue-500">10K+</h3>
               <p className="text-gray-500">Trusted Customers</p>
@@ -59,7 +59,7 @@ export function Landing() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100" id="about">
+      <section className="w-full pt-2 pb-12 md:py-24 lg:py-32 bg-gray-100 px-4" id="about">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -104,7 +104,7 @@ export function Landing() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className="w-full py-12 md:py-24 lg:py-32 px-4">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -131,7 +131,7 @@ export function Landing() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32" id="products">
+      <section className="w-full py-12 md:py-24 lg:py-32 px-4" id="products">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -227,7 +227,7 @@ export function Landing() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 px-4">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
