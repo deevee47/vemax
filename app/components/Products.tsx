@@ -3,10 +3,9 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, ChevronDown } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import { products as initialProducts } from '../components/data';
 import Link from 'next/link';
+import { Button } from './ui/button';
 
 interface Product {
     id: string;
@@ -22,7 +21,6 @@ const ProductCard: React.FC<{ product: Product; priority?: boolean }> = React.me
             <motion.div
                 className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transition-all duration-300 ease-in-out"
                 whileHover={{
-                    scale: 1.03,
                     boxShadow: "0 20px 30px rgba(0, 0, 0, 0.1)",
                     y: -5,
                 }}
@@ -66,18 +64,11 @@ const ProductCard: React.FC<{ product: Product; priority?: boolean }> = React.me
                 <div className="p-4">
                     <h3 className="text-xl font-bold mb-2 text-gray-800 truncate">{product.name}</h3>
                     <p className="text-gray-600 mb-4 h-12 overflow-hidden">{product.description}</p>
-                    <motion.div
-                        className="flex-1 border-2 border-blue-600 text-blue-600 px-4 py-2 rounded-md text-center"
-                        whileHover={{
-                            backgroundColor: "#3B82F6",
-                            color: "white",
-                        }}
-                        transition={{
-                            duration: 0.2,
-                        }}
+                    <Button
+                        className="flex w-full border-2 border-blue-600 text-blue-600 px-4 py-2 rounded-md text-center hover:text-white hover:bg-blue-600 bg-white"
                     >
                         View Details
-                    </motion.div>
+                    </Button>
                 </div>
             </motion.div>
         </Link>
@@ -135,7 +126,6 @@ const ProductsPage: React.FC<{ products?: Product[] }> = ({ products = initialPr
             transition={{ duration: 0.5 }}
             className="min-h-screen bg-gray-100"
         >
-            <Navbar />
             <div className="container mx-auto px-8 py-8">
                 <motion.div
                     initial={{ y: -20, opacity: 0 }}
@@ -171,7 +161,7 @@ const ProductsPage: React.FC<{ products?: Product[] }> = ({ products = initialPr
                     {loading ? (
                         <motion.div
                             key="skeleton"
-                            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+                            className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -223,7 +213,6 @@ const ProductsPage: React.FC<{ products?: Product[] }> = ({ products = initialPr
                     )}
                 </AnimatePresence>
             </div>
-            <Footer />
         </motion.div>
     );
 };

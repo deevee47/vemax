@@ -30,7 +30,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              VeMax
+              VMax
             </motion.div>
           </Link>
           <nav className="hidden md:flex items-center gap-6">

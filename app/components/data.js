@@ -3,7 +3,7 @@ export const products = [
     "id":"001",
     "name": "LED Bulb",
     "category": "Indoor",
-    "description": "Upgrade your lighting with our energy-saving LED bulbs.",
+    "description": "Upgrade your lighting to the next level with our energy-saving LED bulbs.",
     "imgUrl": "https://ik.imagekit.io/wlcaybfpqp/VMAX%20product/led-bulb.jpg?updatedAt=1718707898522"
   },{
     "id": "005",
@@ -30,7 +30,7 @@ export const products = [
     "id":"002",
     "name": "Street Light (100W)",
     "category": "Outdoor",
-    "description": "Keep your roads safe with our 100w street lights!",
+    "description": "Keep your roads safe for everyone with our 100W street lights!",
     "imgUrl": "https://ik.imagekit.io/wlcaybfpqp/VMAX%20product/street-light-50w-100w.jpg?updatedAt=1718707904647"
   },
   {
@@ -65,7 +65,7 @@ export const products = [
     "id": "016",
     "name": "Night Bulb (0.5W)",
     "category": "Indoor",
-    "description": "Get the perfect ambience at night with our night bulbs!",
+    "description": "Get the perfect ambience at night to illuminate your space with our night bulbs!",
     "imgUrl":"https://ik.imagekit.io/wlcaybfpqp/VMAX%20product/night-bulb.jpg?updatedAt=1718707899046"
   },
   {

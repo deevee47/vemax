@@ -9,6 +9,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
 import Spinner from '../../components/Spinner.jsx';
+import { Button } from '@/app/components/ui/button';
 
 //@ts-ignore
 export default function SingleProductPage({ params }) {
@@ -35,13 +36,6 @@ export default function SingleProductPage({ params }) {
         animate: { x: 0, opacity: 1, transition: { delay: 0.2, duration: 0.5 } }
     };
 
-    const buttonVariants = {
-        initial: { scale: 0 },
-        animate: { scale: 1, transition: { delay: 0.5, type: 'spring', stiffness: 150 } },
-        hover: { scale: 1.05, transition: { duration: 0.2 } },
-        tap: { scale: 0.95 }
-    };
-
     return (
         <motion.div
             initial="initial"
@@ -50,10 +44,8 @@ export default function SingleProductPage({ params }) {
             variants={pageVariants}
             transition={{ duration: 0.5 }}
         >
-            <Navbar />
-            <div className="p-10 bg-gray-100 min-h-screen">
                 <motion.div
-                    className="max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden"
+                    className="min-w-screen p-10 rounded-xl shadow-lg overflow-hidden"
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5 }}
@@ -79,6 +71,7 @@ export default function SingleProductPage({ params }) {
                                 src={product.imgUrl}
                                 alt={product.name}
                                 fill
+                                className='rounded-xl'
                                 style={{ objectFit: "cover" }}
                                 onLoadingComplete={() => setImageLoaded(true)}
                             />
@@ -118,31 +111,23 @@ export default function SingleProductPage({ params }) {
                                 transition={{ delay: 0.6, duration: 0.5 }}
                             >
                                 <Link href="/products" passHref>
-                                    <motion.button
-                                        className="bg-blue-600 mr-2 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out"
-                                        variants={buttonVariants}
-                                        whileHover="hover"
-                                        whileTap="tap"
+                                    <Button
+                                        className="bg-blue-600 mr-2 mb-2 min-w-52 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out"
                                     >
                                         View All Products
-                                    </motion.button>
+                                    </Button>
                                 </Link>
                                 <Link href="/contact" passHref>
-                                    <motion.button
-                                        className="border-blue-600 border-2 text-blue-600 px-6 py-3 rounded-md hover:bg-blue-700 hover:text-white transition duration-300 ease-in-out"
-                                        variants={buttonVariants}
-                                        whileHover="hover"
-                                        whileTap="tap"
+                                <Button
+                                    className="border-blue-600 border-2 min-w-52 text-blue-600 px-6 py-3 rounded-md hover:bg-blue-700 hover:text-white transition duration-300 ease-in-out"
                                     >
                                         Want to Buy?
-                                    </motion.button>
+                                </Button>
                                 </Link>
                             </motion.div>
                         </motion.div>
                     </div>
                 </motion.div>
-            </div>
-            <Footer />
         </motion.div>
     );
 }

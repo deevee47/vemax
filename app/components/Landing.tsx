@@ -1,14 +1,13 @@
-
+"use client"
 import Link from "next/link"
-import { Button } from "@/app/components/ui/button"
 import Navbar from "./Navbar"
-import TeamMember from "./utils/teamMember"
 import Footer from "./Footer"
+import ProductCarousel from "./utils/ProductCarousel"
+
 
 export function Landing() {
   return (
     <div className="flex flex-col min-h-[100dvh]" id="landing">
-      <Navbar />
       <section className="w-full relative h-[80vh] lg:h-[90vh] overflow-hidden mt-16">
         <img
           alt="Hero Image"
@@ -105,33 +104,8 @@ export function Landing() {
         </div>
       </section>
       <section className="w-full py-12 md:py-24 lg:py-32 px-4">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-red-500">Our Journey</h2>
-              <p className="mt-4 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Our electric manufacturing company has come a long way since its inception in 2010. From humble
-                beginnings to becoming a global leader in innovative electric solutions, our journey has been marked by
-                a relentless pursuit of excellence and a commitment to sustainability.
-              </p>
-            </div>
-            <div>
-              <img
-                alt="Our Journey"
-                className="rounded-lg object-cover"
-                height="400"
-                src="/demo.jpg"
-                style={{
-                  aspectRatio: "600/400",
-                  objectFit: "cover",
-                }}
-                width="600"
-              />
-            </div>
-          </div>
-        </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 px-4" id="products">
+      <section className="w-full px-4" id="products">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -141,112 +115,49 @@ export function Landing() {
               </p>
             </div>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-lg bg-white shadow-md">
-              <img
-                alt="Product 1"
-                className="rounded-t-lg object-cover"
-                height="400"
-                src="/galaxy-7w.jpg"
-                style={{
-                  aspectRatio: "500/400",
-                  objectFit: "cover",
-                }}
-                width="500"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold">Galaxy Bulb</h3>
-                <p className="mt-2 text-gray-500">
-                  Our high-efficiency bulbs are designed for residental applications.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    className="inline-flex items-center justify-center rounded-md bg-black px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-900/90 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                    href="#"
-                  >
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="rounded-lg bg-white shadow-md">
-              <img
-                alt="Product 3"
-                className="rounded-t-lg object-cover"
-                height="400"
-                src="/street-light-50w-100w.jpg"
-                style={{
-                  aspectRatio: "500/400",
-                  objectFit: "contain",
-                }}
-                width="500"
-                
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold">Street Lights</h3>
-                <p className="mt-2 text-gray-500">
-                  Our advanced electric flood ligts are designed for residental and commercial use.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-900/90 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                    href="#"
-                  >
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="rounded-lg shadow-md">
-              <img
-                alt="Product 2"
-                className="rounded-t-lg object-cover"
-                height="400"
-                src="/bulb.jpg"
-                style={{
-                  aspectRatio: "500/400",
-                  objectFit: "cover",
-                }}
-                width="500"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold">Electric Inverter</h3>
-                <p className="mt-2 text-gray-500">
-                  Our reliable electric inverters are designed for seamless power conversion.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-900/90 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                    href="#"
-                  >
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            </div>
+          <div className="mt-12">
+            <ProductCarousel />
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 px-4">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Meet Our Team</h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Our talented team of engineers and experts are dedicated to pushing the boundaries of electric
-                technology.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              <TeamMember imgPath="./demo.jpg" name="John Doe" position="Co-founder"/>
-              <TeamMember imgPath="./demo2.jpg" name="John Doe" position="Co-founder"/>
-              <TeamMember imgPath="./demo3.jpg" name="John Doe" position="Co-founder"/>
 
-            </div>
+
+      <section id="sustainability" className="py-16 bg-green-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Commitment to Sustainability</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              { name: "Energy Efficiency", description: "All our products meet or exceed ENERGY STAR® standards, helping customers reduce their carbon footprint." },
+              { name: "Responsible Sourcing", description: "We partner with suppliers who share our commitment to ethical and sustainable practices." }
+            ].map((initiative, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 border-l-4 border-green-500">
+                <h3 className="text-xl font-semibold mb-2 text-green-700">{initiative.name}</h3>
+                <p className="text-gray-600">{initiative.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-      <Footer />
+
+      <section id="innovation" className="py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Innovation at Our Core</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              { title: "AI-Powered Energy Management", description: "Developing appliances that learn usage patterns to optimize energy consumption." },
+              { title: "Advanced Materials Research", description: "Exploring new materials to enhance durability and reduce environmental impact." },
+              { title: "IoT Integration", description: "Creating a seamless ecosystem of connected appliances for smarter homes." },
+              { title: "Sustainable Manufacturing", description: "Implementing cutting-edge processes to minimize waste and maximize efficiency in production." }
+            ].map((innovation, index) => (
+              <div key={index} className="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-lg hover:bg-opacity-20 transition-all duration-300">
+                <h3 className="text-xl font-semibold mb-2">{innovation.title}</h3>
+                <p className="text-gray-200">{innovation.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+  
     </div>
   )
 }

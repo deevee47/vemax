@@ -9,7 +9,6 @@ import Navbar from "./Navbar"
 export function Contact() {
   return (
     <div className="flex flex-col">
-      <Navbar />
       <main className="px-8 md:px-6">
         <section className="w-full py-12 md:py-24 lg:py-32 flex items-center justify-center" id="contact">
           <div className="container">
