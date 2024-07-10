@@ -1,11 +1,9 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { Button } from "@/app/components/ui/button"
 import TeamMember from "./utils/teamMember"
-import { BoltIcon, HomeIcon, BuildingIcon, FactoryIcon, LeafIcon, LightbulbIcon, PhoneIcon, BarChartIcon, AwardIcon, ClockIcon } from "lucide-react";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import { BoltIcon, HomeIcon, BuildingIcon, FactoryIcon, LeafIcon, LightbulbIcon, BarChartIcon, AwardIcon } from "lucide-react";
+
 
 export default function About() {
 

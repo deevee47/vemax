@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, ChevronDown } from 'lucide-react';
-import { products as initialProducts } from '../components/data';
+import { products as initialProducts } from './data';
 import Link from 'next/link';
 import { Button } from './ui/button';
 

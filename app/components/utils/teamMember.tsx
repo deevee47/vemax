@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { FC } from 'react';
 
 interface TeamMemberProps {
@@ -10,7 +11,7 @@ const TeamMember: FC<TeamMemberProps> = ({ imgPath, name, position }) => {
     return (
         <div>
             <div className="rounded-lg bg-white shadow-md">
-                <img
+                <Image
                     alt="Team Member 1"
                     className="rounded-t-lg object-cover"
                     height="400"
@@ -30,7 +31,5 @@ const TeamMember: FC<TeamMemberProps> = ({ imgPath, name, position }) => {
         </div>
     );
 };
-
-TeamMember.displayName = 'TeamMember';
 
 export default TeamMember;
