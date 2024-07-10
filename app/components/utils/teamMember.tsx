@@ -31,4 +31,6 @@ const TeamMember: FC<TeamMemberProps> = ({ imgPath, name, position }) => {
     );
 };
 
+TeamMember.displayName = 'TeamMember';
+
 export default TeamMember;
