@@ -2,7 +2,7 @@ import { Landing } from "./components/Landing";
 
 export default function Home() {
   return ( 
-    <div className="smooth-scroll">
+    <div className="">
       <Landing />
     </div>
   );

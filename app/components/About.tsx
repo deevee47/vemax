@@ -16,7 +16,7 @@ export default function About() {
           <div className="container mx-auto px-4 z-10 text-white text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">Powering Your Life, Sustainably</h1>
             <p className="text-xl md:text-2xl mb-8 animate-fade-in-up animation-delay-300">Vmax Appliances: Crafting innovative, energy-efficient solutions since 2010.</p>
-            <a href="#about" className="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors animate-fade-in-up animation-delay-600">Discover Our Story</a>
+            <Link href="#about" className="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors animate-fade-in-up animation-delay-600">Discover Our Story</Link>
           </div>
         </section>
 
