@@ -12,11 +12,11 @@ export default function About() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       <main className="flex-grow">
-        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-blue-500">
+        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-blue-700">
           <div className="container mx-auto px-4 z-10 text-white text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">Powering Your Life, Sustainably</h1>
-            <p className="text-xl md:text-2xl mb-8 animate-fade-in-up animation-delay-300">Acme Appliances: Crafting innovative, energy-efficient home solutions since 1975.</p>
-            <a href="#about" className="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-colors animate-fade-in-up animation-delay-600">Discover Our Story</a>
+            <p className="text-xl md:text-2xl mb-8 animate-fade-in-up animation-delay-300">Vmax Appliances: Crafting innovative, energy-efficient solutions since 2010.</p>
+            <a href="#about" className="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors animate-fade-in-up animation-delay-600">Discover Our Story</a>
           </div>
         </section>
 
@@ -24,7 +24,7 @@ export default function About() {
           <div className="container px-4 md:px-6 mx-auto">
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
               <div>
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-red-500">Our Journey</h2>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-blue-700">Our Journey</h2>
                 <p className="mt-4 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Our electric manufacturing company has come a long way since its inception in 2010. From humble
                   beginnings to becoming a global leader in innovative electric solutions, our journey has been marked by

@@ -180,7 +180,7 @@ const ProductsPage: React.FC<{ products?: Product[] }> = ({ products = initialPr
                             transition={{ duration: 0.5 }}
                             className="text-center text-gray-600 text-lg mt-10"
                         >
-                            No products found. Try adjusting your search or filters.
+                            No products found. Try adjusting your search filters or categories.
                         </motion.div>
                     ) : (
                         <motion.div
