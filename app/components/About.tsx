@@ -24,7 +24,7 @@ export default function About() {
           <div className="container px-4 md:px-6 mx-auto">
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
               <div>
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-blue-700">Our Journey</h2>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Our Journey</h2>
                 <p className="mt-4 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Our electric manufacturing company has come a long way since its inception in 2010. From humble
                   beginnings to becoming a global leader in innovative electric solutions, our journey has been marked by
