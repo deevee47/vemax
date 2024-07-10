@@ -217,4 +217,6 @@ const ProductsPage: React.FC<{ products?: Product[] }> = ({ products = initialPr
     );
 };
 
+ProductsPage.displayName = 'ProductsList';
+
 export default ProductsPage;
