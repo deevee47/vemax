@@ -6,6 +6,7 @@ import { BoltIcon, HomeIcon, BuildingIcon, FactoryIcon, LeafIcon, LightbulbIcon,
 import Image from "next/image";
 
 
+
 export default function About() {
 
   return (
@@ -55,9 +56,9 @@ export default function About() {
                 </p>
               </div>
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                <TeamMember imgPath="./demo.jpg" name="John Doe" position="Co-founder" />
-                <TeamMember imgPath="./demo2.jpg" name="John Doe" position="Co-founder" />
-                <TeamMember imgPath="./demo3.jpg" name="John Doe" position="Co-founder" />
+                <TeamMember imgPath="/demo.jpg" name="John Doe" position="Co-founder" />
+                <TeamMember imgPath="/demo2.jpg" name="John Doe" position="Co-founder" />
+                <TeamMember imgPath="/demo3.jpg" name="John Doe" position="Co-founder" />
               </div>
             </div>
           </div>
