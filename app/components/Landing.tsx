@@ -1,15 +1,14 @@
 "use client"
 import Link from "next/link"
-import Navbar from "./Navbar"
-import Footer from "./Footer"
 import ProductCarousel from "./utils/ProductCarousel"
+import Image from "next/image"
 
 
 export function Landing() {
   return (
     <div className="flex flex-col min-h-[100dvh]" id="landing">
       <section className="w-full relative h-[80vh] lg:h-[90vh] overflow-hidden mt-16">
-        <img
+        <Image
           alt="Hero Image"
           className="absolute inset-0 w-full h-full object-cover"
           height={1080}

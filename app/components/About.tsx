@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import TeamMember from "./utils/teamMember"
 import { BoltIcon, HomeIcon, BuildingIcon, FactoryIcon, LeafIcon, LightbulbIcon, BarChartIcon, AwardIcon } from "lucide-react";
+import Image from "next/image";
 
 
 export default function About() {
@@ -30,7 +31,7 @@ export default function About() {
                 </p>
               </div>
               <div>
-                <img
+                <Image
                   alt="Our Journey"
                   className="rounded-lg object-cover"
                   height="400"

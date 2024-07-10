@@ -1,10 +1,9 @@
-
 import { Button } from "@/app/components/ui/button"
 import { Label } from "@/app/components/ui/label"
 import { Input } from "@/app/components/ui/input"
 import { Textarea } from "@/app/components/ui/textarea"
 import { CardContent, Card } from "@/app/components/ui/card"
-import Navbar from "./Navbar"
+import Image from "next/image"
 
 export function Contact() {
   return (
@@ -28,7 +27,7 @@ export function Contact() {
                     <Label htmlFor="message">Message</Label>
                     <Textarea id="message" placeholder="Enter your message" rows={5} />
                   </div>
-                  <Button className="w-full" type="submit">
+                  <Button className="w-full bg-black" type="submit">
                     Submit
                   </Button>
                 </form>
@@ -36,7 +35,7 @@ export function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-24">
                 <Card>
                   <CardContent className="flex flex-col items-center justify-center">
-                    <img
+                    <Image
                       alt="QR Code 1"
                       className="rounded-lg object-contain"
                       height={500}
@@ -51,7 +50,7 @@ export function Contact() {
                 </Card>
                 <Card>
                   <CardContent className="flex flex-col items-center justify-center">
-                    <img
+                    <Image
                       alt="QR Code 1"
                       className="rounded-lg object-contain"
                       height={500}
@@ -66,7 +65,7 @@ export function Contact() {
                   </Card>
                   <Card>
                     <CardContent className="flex flex-col items-center justify-center">
-                      <img
+                      <Image
                         alt="QR Code 1"
                         className="rounded-lg object-contain"
                         height={500}
