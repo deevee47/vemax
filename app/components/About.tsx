@@ -16,11 +16,11 @@ export default function About() {
           <div className="container mx-auto px-4 z-10 text-white text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">Powering Your Life, Sustainably</h1>
             <p className="text-xl md:text-2xl mb-8 animate-fade-in-up animation-delay-300">Vmax Appliances: Crafting innovative, energy-efficient solutions since 2010.</p>
-            <Link href="#about" className="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors animate-fade-in-up animation-delay-600">Discover Our Story</Link>
+            <Link href="#journey" className="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors animate-fade-in-up animation-delay-600">Discover Our Story</Link>
           </div>
         </section>
 
-        <section className="w-full py-10 md:py-24 lg:py-32 bg-gray-100 px-4">
+        <section id='journey' className="w-full py-10 md:py-24 lg:py-32 bg-gray-100 px-4">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
               <div>
@@ -46,25 +46,9 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="container px-4 md:px-6 mx-auto mt-24 pt-8">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Meet Our Team</h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Our talented team of engineers and experts are dedicated to pushing the boundaries of electric
-                  technology.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                <TeamMember imgPath="/demo.jpg" name="John Doe" position="Co-founder" />
-                <TeamMember imgPath="/demo2.jpg" name="John Doe" position="Co-founder" />
-                <TeamMember imgPath="/demo3.jpg" name="John Doe" position="Co-founder" />
-              </div>
-            </div>
-          </div>
         </section>
 
-        <section id="about" className="py-16">
+        <section id="about" className="py-8">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Our Commitment to Excellence</h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -101,6 +85,25 @@ export default function About() {
             </div>
           </div>
         </section>
+        
+
+        <div className="container px-4 md:px-6 mx-auto my-8 pt-8 pb-20">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Meet Our Team</h2>
+              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Our talented team of engineers and experts are dedicated to pushing the boundaries of electric
+                technology.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <TeamMember imgPath="/demo.jpg" name="John Doe" position="Co-founder" />
+              <TeamMember imgPath="/demo2.jpg" name="John Doe" position="Co-founder" />
+              <TeamMember imgPath="/demo3.jpg" name="John Doe" position="Co-founder" />
+            </div>
+          </div>
+        </div>
+
 
         <section className="py-16 bg-blue-700 text-white">
           <div className="container mx-auto px-4">

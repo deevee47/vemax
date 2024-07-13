@@ -21,7 +21,7 @@ export default function Footer() {
                                 Products
                             </Link>
                             <Link href="/contact" className="hover:text-gray-400">
-                                Contact Us
+                                Contact
                             </Link>
                         </nav>
                     </div>
