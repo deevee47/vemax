@@ -6,7 +6,7 @@ export default function Document() {
       <Head />
       <body>
         <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-          <input type="text" name="name" />
+          <input type="text" name="bot-field" />
           <input type="email" name="email" />
           <textarea name="message"></textarea>
         </form>
