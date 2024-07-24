@@ -2,6 +2,7 @@
 import Link from "next/link"
 import ProductCarousel from "./utils/ProductCarousel"
 import Image from "next/image"
+import { ArrowRight, Award, Leaf, Users, Zap } from "lucide-react"
 
 
 export function Landing() {
@@ -61,7 +62,7 @@ export function Landing() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+              <h2 className="text-3xl  font-bold tracking-tighter md:text-4xl/tight">
                 About Our Electric Manufacturing Company
               </h2>
               <p className="mt-4 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -108,7 +109,7 @@ export function Landing() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-blue-500">Our Electric Manufacturing Solutions</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-black">Our Electric Manufacturing Solutions</h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Explore our cutting-edge electric manufacturing products that are transforming industries.
               </p>
@@ -137,26 +138,47 @@ export function Landing() {
           </div>
         </div>
       </section>
-
-      {/* <section id="innovation" className="py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Innovation at Our Core</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              { title: "AI-Powered Energy Management", description: "Developing appliances that learn usage patterns to optimize energy consumption." },
-              { title: "Advanced Materials Research", description: "Exploring new materials to enhance durability and reduce environmental impact." },
-              { title: "IoT Integration", description: "Creating a seamless ecosystem of connected appliances for smarter homes." },
-              { title: "Sustainable Manufacturing", description: "Implementing cutting-edge processes to minimize waste and maximize efficiency in production." }
-            ].map((innovation, index) => (
-              <div key={index} className="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-lg hover:bg-opacity-20 transition-all duration-300">
-                <h3 className="text-xl font-semibold mb-2">{innovation.title}</h3>
-                <p className="text-gray-200">{innovation.description}</p>
+      <section className="w-full py-24 bg-white text-gray-800" id="about">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8 text-black animate-fade-in-down">
+            Powering Everything, Sustainably
+          </h1>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 animate-fade-in-left">
+              <p className="text-lg md:text-xl leading-relaxed text-gray-600">
+                Since 2010, Vmax Appliances has been revolutionizing indoors and outdoors with energy-efficient, high-performance appliances. From kitchens to backyard, we're committed to making your life easier while reducing your carbon footprint.
+              </p>
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <button className="group inline-flex items-center px-4 py-2 text-base font-semibold rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 ease-in-out transform shadow-lg hover:shadow-xl">
+                  Know More About Us
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </button>
+                <a href="#products" className=" text-base inline-flex items-center justify-center px-4 py-2 font-semibold rounded-lg border-2 border-blue-600 text-blue-600 hover:bg-blue-100 transition-all duration-300 ease-in-out transform  shadow-lg hover:shadow-xl">
+                  View Products
+                </a>
               </div>
-            ))}
+            </div>
+            <div className="grid grid-cols-2 gap-6 animate-fade-in-right">
+              {[
+                { icon: Zap, label: 'Energy Efficient', value: '30% Savings' },
+                { icon: Leaf, label: 'Eco-Friendly', value: '100% Committed' },
+                { icon: Award, label: 'Trust Worthy', value: 'Products Last Long' },
+                { icon: Users, label: 'Happy Customers', value: '1M+' },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className=" flex flex-col items-center justify-center p-4 py-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg transition-all duration-300 hover:shadow-lg "
+                >
+                  <item.icon className="h-10 w-10 mb-4 text-blue-600" />
+                  <p className="text-sm font-medium text-gray-600">{item.label}</p>
+                  <p className="text-lg font-bold text-blue-800 text-center w-full">{item.value}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </section> */}
-  
+      </section>
+
     </div>
   )
 }

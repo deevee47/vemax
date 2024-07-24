@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function About() {
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <div className="flex flex-col min-h-screen bg-gray-100" id="about-us-section">
       <main className="flex-grow">
         <section className="relative h-screen flex items-center justify-center overflow-hidden bg-blue-700">
           <div className="container mx-auto px-4 z-10 text-white text-center">
@@ -121,7 +121,7 @@ export default function About() {
               ))}
             </div>
           </div>
-        </section>
+        </section>    
       </main>
     </div>
   );

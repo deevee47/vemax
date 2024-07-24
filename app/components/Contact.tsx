@@ -1,131 +1,124 @@
-import { Button } from "@/app/components/ui/button"
-import { Label } from "@/app/components/ui/label"
-import { Input } from "@/app/components/ui/input"
-import { Textarea } from "@/app/components/ui/textarea"
-import { CardContent, Card } from "@/app/components/ui/card"
-import Image from "next/image"
+"use client"
+import React, { useState } from "react";
+import { Label } from "./ui/label";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Button } from "./ui/button";
+import { FaInstagram, FaFacebook, FaMapMarkerAlt } from "react-icons/fa";
 
 export function Contact() {
-  return (
-    <div className="flex flex-col">
-      <main className="px-8 md:px-6">
-        <section className="w-full py-12 md:py-24 lg:py-32 flex items-center justify-center" id="contact">
-          <div className="container">
-            <div className="flex flex-col items-center justify-center gap-12 md:flex-row md:items-start">
-              <div className="w-full max-w-md -mt-10">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-5xl/tight py-6">Contact Us</h2>
-                <form className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Enter your name" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" placeholder="Enter your email" type="email" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="Enter your message" rows={5} />
-                  </div>
-                  <Button className="w-full bg-black" type="submit">
-                    Submit
-                  </Button>
-                </form>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-24">
-                <Card>
-                  <CardContent className="flex flex-col items-center justify-center">
-                    <Image
-                      alt="QR Code 1"
-                      className="rounded-lg object-contain"
-                      height={500}
-                      src="/rickrollqr.webp"
-                      width={500}
-                    />
-                    <div className="text-center">
-                      <h3 className="text-lg font-bold">Facebook</h3>
-                      <p className="text-gray-500 ">Scan this QR code or click here</p>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="flex flex-col items-center justify-center">
-                    <Image
-                      alt="QR Code 1"
-                      className="rounded-lg object-contain"
-                      height={500}
-                      src="/rickrollqr.webp"
-                      width={500}
-                    />
-                    <div className="text-center">
-                      <h3 className="text-lg font-bold">Instagram</h3>
-                      <p className="text-gray-500 ">Scan this QR code or click here</p>
-                    </div>
-                  </CardContent>
-                  </Card>
-                  <Card>
-                    <CardContent className="flex flex-col items-center justify-center">
-                      <Image
-                        alt="QR Code 1"
-                        className="rounded-lg object-contain"
-                        height={500}
-                        src="/rickrollqr.webp"
-                        width={500}
-                      />
-                      <div className="text-center">
-                        <h3 className="text-lg font-bold">Maps</h3>
-                        <p className="text-gray-500 ">Scan this QR code or click here</p>
-                      </div>
-                    </CardContent>
-                  </Card>
+  const [formState, setFormState] = useState({});
 
-              </div>
+  const handleChange = (e : any) => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e : any) => {
+    e.preventDefault();
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formState).toString(),
+    })
+      .then(() => {
+        alert("Form submitted successfully!");
+        form.reset();
+      })
+      .catch((error) => alert(error));
+  };
+
+  return (
+    <TooltipProvider>
+      <div className="min-h-screen flex overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+        <main className="flex-grow px-8 md:px-6 flex items-center justify-center">
+          <div className="w-full max-w-md space-y-8 p-10">
+            <div>
+              <h2 className="text-4xl font-extrabold tracking-tight md:text-5xl/tight text-gray-800 mb-2">
+                Contact Us
+              </h2>
+              <p className="text-gray-600 text-lg">We'd love to hear from you.</p>
             </div>
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <div className="space-y-2">
+                <Label htmlFor="name" className="text-gray-700 font-semibold">Name</Label>
+                <Input
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-gray-700 font-semibold">Email</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  type="email"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="message" className="text-gray-700 font-semibold">Message</Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Enter your message"
+                  rows={5}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <Button
+                className="w-full bg-black text-white font-bold py-3 px-4 rounded-md"
+                type="submit"
+              >
+                Send Message
+              </Button>
+            </form>
           </div>
-        </section>
-      </main>
+        </main>
+        <div className="w-20 bg-white flex flex-col items-center justify-center space-y-12 shadow-lg">
+          <SocialIcon Icon={FaInstagram} label="Instagram" />
+          <SocialIcon Icon={FaFacebook} label="Facebook" />
+          <SocialIcon Icon={FaMapMarkerAlt} label="Maps" />
+        </div>
       </div>
-  )
+    </TooltipProvider>
+  );
 }
 
-//@ts-ignore
-function MenuIcon(props) {
+function SocialIcon({ Icon, label } : any) {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
-    </svg>
-  )
-}
-
-//@ts-ignore
-function MountainIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-    </svg>
-  )
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Icon className="w-10 h-10 text-gray-600 hover:text-blue-600 transition-colors duration-200 cursor-pointer transform hover:scale-110" />
+      </TooltipTrigger>
+      <TooltipContent>
+        <p className="px-2 py-1">Click to view {label}</p>
+      </TooltipContent>
+    </Tooltip>
+  );
 }
